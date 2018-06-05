@@ -1,5 +1,5 @@
 # playbooks
-A collection of Ansible playbooks
+A collection of Ansible playbooks for SoftLeader
 
 # Read more
 
