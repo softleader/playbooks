@@ -5,11 +5,11 @@
 ## Before started (在 local 端執行)
 
 ```sh
-# 在 ec2 上建立腳本資料夾, 如: /source
-ssh -i /path/to/key.pem ubuntu@ec2.ip "mkdir -p /source"
+# 在 ec2 上建立腳本資料夾, 如: /home/ubuntu/playbook
+ssh -i /path/to/key.pem ubuntu@ec2.ip "mkdir -p /home/ubuntu/playbook"
 
 # ec2-ubuntu/ 資料夾下所有檔案 copy 到 ec2 的 vm 上
-scp -i /path/to/key.pem -r ec2-ubuntu/* ubuntu@ec2.ip:/source
+scp -i /path/to/key.pem -r ec2-ubuntu/* ubuntu@ec2.ip:/home/ubuntu/playbook
 ```
 
 ## Run ansible （在 ec2 上執行)
@@ -26,10 +26,10 @@ apt-get install -y ansible
 vim /source/group_vars/all.yml
 
 # 執行所有腳本
-ansible-playbook /source/all.yml -vvv
+ansible-playbook /home/ubuntu/playbook/all.yml -vvv
 
 # 執行單一腳本
-ansible-playbook /source/play.yml -e 'role=${pick-a-role}' -vvv
+ansible-playbook /home/ubuntu/playbook/play.yml -e 'role=${pick-a-role}' -vvv
 ```
 
 ### Role
