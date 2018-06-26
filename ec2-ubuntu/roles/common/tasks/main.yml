@@ -1,0 +1,6 @@
+---
+- name: Updating the apt package index
+  shell: apt update
+
+- name: Installing useful packages
+  shell: apt install -y systemd vim tree curl

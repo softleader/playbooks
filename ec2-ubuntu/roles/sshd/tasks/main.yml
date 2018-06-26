@@ -1,0 +1,25 @@
+---
+- name: Check if openssh server installed
+  shell: dpkg --get-selections | grep -v deinstall | grep openssh-server
+  ignore_errors: yes
+  register: sshd
+  changed_when: sshd.rc > 0
+
+- name: Installing openssh-server
+  shell: apt-get install -y openssh-server
+  when: sshd.changed
+
+- name: Changing PermitRootLogin to yes
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: "PermitRootLogin prohibit-password"
+    replace: "PermitRootLogin yes"
+    backup: yes
+
+- name: Commenting out AcceptEnv LANG
+  replace:
+    path: /etc/ssh/sshd_config
+    regexp: "AcceptEnv LANG LC_*"
+    replace: "#AcceptEnv LANG LC_*"
+    backup: yes
+  notify: restart sshd

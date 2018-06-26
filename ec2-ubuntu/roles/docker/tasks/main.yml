@@ -1,0 +1,63 @@
+---
+- name: Check if docker exist
+  shell: docker --version
+  ignore_errors: yes
+  register: dockerec
+  changed_when: "dockerec.rc > 0"
+  when: docker.enabled
+
+- name: Updating the apt package index
+  shell: apt-get update
+  when: dockerec.changed
+
+- name: Installing packages to allow apt to use a repository over HTTPS
+  shell: |
+    apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    software-properties-common
+  when: dockerec.changed
+
+- name: Adding Docker official GPG key
+  shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+  when: dockerec.changed
+
+- name: Setting up the stable repository
+  shell: |
+    add-apt-repository \
+    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) \
+    stable"
+  when: dockerec.changed
+
+- name: Updating the apt package index
+  shell: apt-get update
+  when: dockerec.changed
+
+- name: Installing Docker CE
+  shell: apt-get install -y docker-ce
+  when: dockerec.changed
+
+- name: Check if docker installed complete
+  shell: docker --version
+  when: dockerec.changed
+
+- name: Check if docker compose exist
+  shell: docker-compose --version
+  ignore_errors: yes
+  register: compose
+  changed_when: "compose.rc > 0"
+  when: docker.enabled
+
+- name: Installing Compose
+  shell: curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+  when: compose.changed
+
+- name: Applying executable permissions to the binary
+  shell: chmod +x /usr/local/bin/docker-compose
+  when: compose.changed
+
+- name: Check if docker compose installed complete
+  shell: docker-compose --version
+  when: compose.changed

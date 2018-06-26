@@ -1,0 +1,11 @@
+ssh:
+  path: "/home/ubuntu/.ssh"
+  key: "/home/ubuntu/support.pem"
+docker: 
+  # 是否要安裝 docker?
+  enabled: true
+nfs:
+  # 是否要安裝 nfs?
+  enabled: true
+  # 是否安裝 nfs server package?
+  server: false
