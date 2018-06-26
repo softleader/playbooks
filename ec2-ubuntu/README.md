@@ -9,7 +9,7 @@
 ssh -i /path/to/key.pem ubuntu@ec2.ip "mkdir -p /source"
 
 # ec2-ubuntu/ 資料夾下所有檔案 copy 到 ec2 的 vm 上
-scp -i /path/to/key.pem -R ec2-ubuntu/* ubuntu@ec2.ip:/source
+scp -i /path/to/key.pem -r ec2-ubuntu/* ubuntu@ec2.ip:/source
 ```
 
 ## Run ansible （在 ec2 上執行)
