@@ -15,6 +15,9 @@ scp -i /path/to/key.pem -r ec2-ubuntu/* ubuntu@ec2.ip:/home/ubuntu/playbook
 ## Run ansible （在 ec2 上執行)
 
 ```sh
+# 切換成 root
+sudo su
+
 # 安裝 ansible
 apt-get update && \
 apt-get install -y software-properties-common && \
