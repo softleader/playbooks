@@ -2,11 +2,11 @@
 
 在 ec2 上新開一個 ubuntu VM 後, 自動配置所有系統參數
 
-## Before started (在 local 端執行)
+## Before started
 
 參考 [curl指令範例](https://github.com/softleader/playbooks) 取得最新的 playbook source
 
-## Run ansible （在 ec2 上執行)
+## Run ansible
 
 ```sh
 # 切換成 root
