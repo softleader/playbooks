@@ -20,7 +20,7 @@ apt-get update && \
 apt-get install -y ansible
 
 # 修改此次腳本執行的 config
-vim /group_vars/all.yml
+vim group_vars/all.yml
 
 # 執行所有腳本
 ansible-playbook all.yml -vvv
