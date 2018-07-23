@@ -4,7 +4,7 @@
 
 ## Before started
 
-參考 [curl指令範例](https://github.com/softleader/playbooks) 取得最新的 playbook source
+參考 [curl指令範例](https://github.com/softleader/playbooks) 在 ec2 上取得最新的 playbook source
 
 ## Run ansible
 
