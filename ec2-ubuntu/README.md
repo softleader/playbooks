@@ -20,13 +20,13 @@ apt-get update && \
 apt-get install -y ansible
 
 # 修改此次腳本執行的 config
-vim /source/group_vars/all.yml
+vim /group_vars/all.yml
 
 # 執行所有腳本
-ansible-playbook /home/ubuntu/playbook/all.yml -vvv
+ansible-playbook all.yml -vvv
 
 # 執行單一腳本
-ansible-playbook /home/ubuntu/playbook/play.yml -e 'role=${pick-a-role}' -vvv
+ansible-playbook play.yml -e 'role=${pick-a-role}' -vvv
 ```
 
 ### Role
