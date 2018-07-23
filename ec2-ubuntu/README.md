@@ -4,13 +4,7 @@
 
 ## Before started (在 local 端執行)
 
-```sh
-# 在 ec2 上建立腳本資料夾, 如: /home/ubuntu/playbook
-ssh -i /path/to/key.pem ubuntu@ec2.ip "mkdir -p /home/ubuntu/playbook"
-
-# ec2-ubuntu/ 資料夾下所有檔案 copy 到 ec2 的 vm 上
-scp -i /path/to/key.pem -r ec2-ubuntu/* ubuntu@ec2.ip:/home/ubuntu/playbook
-```
+參考 [curl指令範例](https://github.com/softleader/playbooks) 取得最新的 playbook source
 
 ## Run ansible （在 ec2 上執行)
 
