@@ -10,4 +10,4 @@
   when: sshd.changed
 
 - name: Copying .ssh to root
-  shell: cp -r {{ ssh.path }} /root/.ssh
+  shell: cp -r {{ ssh.path }}/* /root/.ssh
