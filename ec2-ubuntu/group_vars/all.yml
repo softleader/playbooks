@@ -4,6 +4,8 @@ ssh:
 docker: 
   # 是否要安裝 docker?
   enabled: true
+  # 要安裝的 docker 版本, 若要安裝最新的則修改成: docker-ce
+  version: docker-ce=17.09.0~ce-0~ubuntu
 nfs:
   # 是否要安裝 nfs?
   enabled: true

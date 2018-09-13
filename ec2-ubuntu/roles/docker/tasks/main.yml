@@ -36,7 +36,7 @@
   when: dockerec.changed
 
 - name: Installing Docker CE
-  shell: apt-get install -y docker-ce
+  shell: apt-get install -y {{ docker.version }}
   when: dockerec.changed
 
 - name: Check if docker installed complete
