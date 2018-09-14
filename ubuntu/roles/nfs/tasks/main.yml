@@ -1,0 +1,26 @@
+---
+- name: Updating the apt package index
+  shell: apt-get update
+  when: nfs.client.enabled
+
+- name: Installing nfs client packages
+  shell: apt-get install -y nfs-common
+  when: nfs.client.enabled
+  register: nfs_client
+
+- name: Create mount point
+  shell: mkdir -p {{ nfs.client.mount.point }}
+  when: nfs_client.changed
+
+- name: Mount to nfs server
+  shell: mount -t nfs -o proto=tcp,port=2049 {{ nfs.client.mount.device }} {{ nfs.client.mount.point }}
+  when: nfs_client.changed
+
+- name: Add mount to rc.local
+  shell: cat /etc/rc.local | sed -E 's/(exit 0)/mount -t nfs -o proto=tcp,port=2049 {{ nfs.client.mount.device }} {{ nfs.client.mount.point }} \n\1/g' > /etc/rc.local
+  when: nfs_client.changed
+
+- name: Installing nfs server packages
+  shell: apt-get install -y nfs-kernel-server nfs-common
+  when: 
+    - nfs.server.enabled

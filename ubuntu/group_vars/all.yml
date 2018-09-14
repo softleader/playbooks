@@ -7,7 +7,12 @@ docker:
   # 要安裝的 docker 版本, 若要安裝最新的則修改成: docker-ce
   version: docker-ce=17.09.0~ce-0~ubuntu
 nfs:
-  # 是否要安裝 nfs?
-  enabled: true
-  # 是否安裝 nfs server package?
-  server: false
+  client:
+    # 是否要安裝 nfs client package ?
+    enabled: true
+    mount: 
+      device: 192.168.1.60:/nfs
+      point: /nfs
+  server: 
+    # 是否安裝 nfs server package?
+    enabled: false
