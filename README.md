@@ -3,7 +3,7 @@ A collection of Ansible playbooks for SoftLeader
 
 ## Get the latest playbooks
 
-點擊 Download 或執行以下 command 取得
+點擊 clone or download > Download ZIP 或執行以下 command 取得
 
 ```sh
 # 安裝 curl
