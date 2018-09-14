@@ -1,6 +1,6 @@
-# ec2 ubuntu
+# ubuntu
 
-在 ec2 上新開一個 ubuntu VM 後, 自動配置所有系統參數
+在新建置的 ubuntu host 上, 自動配置所有系統參數 
 
 ## Before started
 
