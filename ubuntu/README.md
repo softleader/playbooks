@@ -34,7 +34,7 @@ ansible-playbook play.yml -e 'role=${pick-a-role}' -vvv
 
 ### Role
 
-- `common` - 安裝會用到的 apt packages
+- `common` - 安裝會用到的 apt packages, 並配製基本的環境設定(如加入 google dns-nameservers)
 - `sshd` - 安裝 open-ssh 並允許 root 可以直接連線
 - `ssh` - 將 ssh 的 key 等資料複製到 root (ec2 適用)
 - `nfs` - 安裝 nfs
