@@ -7,7 +7,7 @@ A collection of Ansible playbooks for SoftLeader
 
 ```sh
 # 安裝 curl
-apt update && apt install curl
+sudo apt update && apt install curl
 
 # 下載
 curl -L https://api.github.com/repos/softleader/playbooks/tarball > playbooks.tar.gz \
