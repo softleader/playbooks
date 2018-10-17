@@ -4,3 +4,6 @@
 
 - name: Installing common packages
   shell: apt install -y systemd vim tree curl
+
+- name: add google dns-nameservers
+  shell: echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces 
