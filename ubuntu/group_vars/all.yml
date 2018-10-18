@@ -1,4 +1,4 @@
-# 放空白代表不修改 hostname
+# 設定 hostname, 放空白代表不修改
 hostname: ""
 ssh:
   path: "/home/ubuntu/.ssh"

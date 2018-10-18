@@ -1,19 +1,19 @@
 ---
-# - name: Updating the apt package index
-#   shell: apt update
+- name: Updating the apt package index
+  shell: apt update
 
-# - name: Installing common packages
-#   shell: apt install -y systemd vim tree curl
+- name: Installing common packages
+  shell: apt install -y systemd vim tree curl
 
-# - name: Check if /etc/network/interfaces exist
-#   shell: ls /etc/network/interfaces 
-#   ignore_errors: yes
-#   register: network
-#   changed_when: "network.rc == 0"
+- name: Check if /etc/network/interfaces exist
+  shell: ls /etc/network/interfaces 
+  ignore_errors: yes
+  register: network
+  changed_when: "network.rc == 0"
 
-# - name: Adding google dns-nameservers
-#   shell: echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces 
-#   when: network.changed
+- name: Adding google dns-nameservers
+  shell: echo "dns-nameservers 8.8.8.8 8.8.4.4" >> /etc/network/interfaces 
+  when: network.changed
 
 - name: Setting up hostname
   shell: echo "{{hostname}}" > /etc/hostname
