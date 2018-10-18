@@ -1,3 +1,5 @@
+# 放空白代表不修改 hostname
+hostname: ""
 ssh:
   path: "/home/ubuntu/.ssh"
   key: "/home/ubuntu/support.pem"
