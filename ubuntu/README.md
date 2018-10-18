@@ -39,3 +39,15 @@ ansible-playbook play.yml -e 'role=${pick-a-role}' -vvv
 - `ssh` - 將 ssh 的 key 等資料複製到 root (ec2 適用)
 - `nfs` - 安裝 nfs
 - `docker` - 安裝 docker
+
+## For Developers
+
+以下方式可以簡單的模擬出一個環境去執行所有 playbooks 加以測試:
+
+```sh
+$ docker build -t playbooks .
+
+$ docker run --rm -it playbooks bash
+
+$ ansible-playbook play.yml -e 'role=${pick-a-role}' -vvv
+```
