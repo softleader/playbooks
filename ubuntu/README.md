@@ -28,7 +28,7 @@ apt-get install -y make
 
 ```sh
 # 修改此次腳本執行的 config
-vim group_vars/all.yml
+vi group_vars/all.yml
 
 # 執行所有腳本
 make all
