@@ -6,7 +6,7 @@
 
 取得 playbook source
 
-## Run ansible
+## Prepare ansible environment
 
 ```sh
 # 切換成 root
@@ -21,7 +21,11 @@ apt-get install -y software-properties-common && \
 apt-add-repository -y ppa:ansible/ansible && \
 apt-get update && \
 apt-get install -y ansible
+```
 
+## Play
+
+```sh
 # 修改此次腳本執行的 config
 vi group_vars/all.yml
 
