@@ -1,6 +1,6 @@
 ---
 - name: Adding insecure docker registries
-  shell: mkdir -p /etc/docker && echo '{"insecure-registries":{{ docker.insecure.registries | map('qoute') | join(', ') }}}' >> /etc/docker/daemon.json
+  shell: mkdir -p /etc/docker && echo '{"insecure-registries":{{ docker.insecure.registries | to_json }}}' >> /etc/docker/daemon.json
   when: docker.insecure.enabled
 
 - name: Check if docker exist

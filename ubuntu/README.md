@@ -15,25 +15,29 @@ sudo su
 # 設定 root 密碼 
 passwd
 
-# 安裝 ansible
+# 安裝 ansible 及必要 package
 apt-get update && \
 apt-get install -y software-properties-common && \
 apt-add-repository -y ppa:ansible/ansible && \
 apt-get update && \
-apt-get install -y ansible
+apt-get install -y ansible && \
+apt-get install -y make
+
+# 配置基本環境
+make role=common
 ```
 
 ## Play
 
 ```sh
 # 修改此次腳本執行的 config
-vi group_vars/all.yml
+vim group_vars/all.yml
 
 # 執行所有腳本
-ansible-playbook all.yml -vvv
+make all
 
 # 執行單一腳本
-ansible-playbook play.yml -e 'role=${pick-a-role}' -vvv
+make role=${role}
 ```
 
 ### Role
@@ -49,9 +53,12 @@ ansible-playbook play.yml -e 'role=${pick-a-role}' -vvv
 以下方式可以簡單的模擬出一個環境去執行所有 playbooks 加以測試:
 
 ```sh
-$ docker build -t playbooks .
+# 把包 image 後執行 container, 並連進其中
+docker build -t playbooks . && docker run --rm -it playbooks bash
 
-$ docker run --rm -it playbooks bash
+# 修改此次腳本執行的 config
+vi group_vars/all.yml
 
-$ ansible-playbook play.yml -e 'role=${pick-a-role}' -vvv
+# 執行想要測試的腳本 
+make role=${role}
 ```
