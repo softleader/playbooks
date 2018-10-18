@@ -6,6 +6,12 @@ docker:
   enabled: true
   # 要安裝的 docker 版本, 若要安裝最新的則修改成: docker-ce
   version: docker-ce=17.09.0~ce-0~ubuntu
+  # 要信任哪個非 https 的 docker registry, 
+  insecure:
+    # 此 enable 的判斷獨立於 docker.enabled 之外
+    enabled: true
+    registries: 
+      - icp-registry:5000
 nfs:
   client:
     # 是否要安裝 nfs client package ?
