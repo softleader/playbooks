@@ -53,8 +53,6 @@ make role=${role}
 以下方式可以簡單的模擬出一個環境去執行所有 playbooks 加以測試:
 
 ```sh
-cd /playbooks/ubuntu
-
 # 把包 image 後執行 container, 並連進其中
 docker build -t playbooks . && docker run --rm -it playbooks bash
 
