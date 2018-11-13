@@ -47,7 +47,7 @@ make role=${role}
 
 ## Add a worker node to SoftLeader Docker Swarm Ecosystem
 
-1. *group_vars/all.yml* 不需修改
+1. *group_vars/all.yml* 只需要修改 hostname, 如 `swarm-worker-99`
 1. `$ make role=common`
 1. `$ make role=ssdh`
 1. `$ make role=docker`
