@@ -45,6 +45,14 @@ make role=${role}
 - `nfs` - 安裝 nfs
 - `docker` - 安裝 docker
 
+#### 安裝公司電腦建議步驟
+
+1. `common`
+1. `ssdh`
+1. `docker`
+1. *reboot*
+1. `nfs`
+
 ## For Developers
 
 以下方式可以簡單的模擬出一個環境去執行所有 playbooks 加以測試:
