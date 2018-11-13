@@ -48,13 +48,13 @@ make role=${role}
 ## 增加公司的 Docker Swarm worker node steps
 
 1. *group_vars/all.yml* 不需修改
-1. `make role=common`
-1. `make role=ssdh`
-1. `make role=docker`
-1. *reboot OS*
-1. `make role=nfs`
-1. `ll /nfs` 確認 nfs 已同步
-1. `ssh root@192.168.1.60 cat /root/docker-swarm-join-token | bash` 加入 swarm
+1. `$ make role=common`
+1. `$ make role=ssdh`
+1. `$ make role=docker`
+1. `$ reboot'
+1. `$ make role=nfs`
+1. `$ ll /nfs` - 確認 nfs 已同步所有資料夾
+1. `$ ssh root@192.168.1.60 cat /root/docker-swarm-join-token | bash` - 加入 swarm
 
 ## For Developers
 
