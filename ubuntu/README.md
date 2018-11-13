@@ -51,7 +51,7 @@ make role=${role}
 1. `$ make role=common`
 1. `$ make role=ssdh`
 1. `$ make role=docker`
-1. `$ reboot'
+1. `$ reboot` - 重啟後再 ssh 進入
 1. `$ make role=nfs`
 1. `$ ll /nfs` - 確認 nfs 已同步所有資料夾
 1. `$ ssh root@192.168.1.60 cat /root/docker-swarm-join-token | bash` - 加入 swarm
