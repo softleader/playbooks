@@ -45,7 +45,7 @@ make role=${role}
 - `nfs` - 安裝 nfs
 - `docker` - 安裝 docker
 
-## 增加公司的 Docker Swarm worker node steps
+## Add a worker node to SoftLeader Docker Swarm Ecosystem
 
 1. *group_vars/all.yml* 不需修改
 1. `$ make role=common`
