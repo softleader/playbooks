@@ -49,7 +49,7 @@ make role=${role}
 
 1. *group_vars/all.yml* 只需要修改 hostname, 如 `swarm-worker-99`
 1. `$ make role=common`
-1. `$ make role=ssdh`
+1. `$ make role=sshd`
 1. `$ make role=docker`
 1. `$ reboot` - 重啟後再 ssh 進入
 1. `$ make role=nfs`
