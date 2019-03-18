@@ -1,6 +1,6 @@
 # ubuntu
 
-在新建置的 ubuntu host 上, 執行公司習慣的環境配置
+在新建置的 ubuntu host 上, 執行公司習慣的環境配置, 適用於 16.04 (xenial) 版本
 
 ## Before started
 
