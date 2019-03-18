@@ -1,6 +1,6 @@
 # ubuntu
 
-在新建置的 ubuntu host 上, 自動配置所有系統參數 
+在新建置的 ubuntu host 上, 執行公司習慣的環境配置
 
 ## Before started
 
@@ -48,13 +48,13 @@ make role=${role}
 ## Add a worker node to SoftLeader Docker Swarm Ecosystem
 
 1. *group_vars/all.yml* 只需要修改 hostname, 如 `swarm-worker-99`
-1. `$ make role=common`
-1. `$ make role=sshd`
-1. `$ make role=docker`
-1. `$ reboot` - 重啟後再 ssh 進入
-1. `$ make role=nfs`
-1. `$ ll /nfs` - 確認 nfs 已同步所有資料夾
-1. `$ ssh root@192.168.1.60 cat /root/docker-swarm-join-token | bash` - 加入 swarm
+1. `make role=common`
+1. `make role=sshd`
+1. `make role=docker`
+1. `reboot` - 重啟後再 ssh 進入
+1. `make role=nfs`
+1. `ll /nfs` - 確認 nfs 已同步所有資料夾, 也許需要等待一小段同步時間
+1. `ssh root@192.168.1.60 -- cat /root/docker-swarm-join-token | bash` - 加入 swarm
 
 ## For Developers
 
