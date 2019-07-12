@@ -4,7 +4,7 @@
 
 ## Before started
 
-取得 playbook source
+取得 [playbook source](https://github.com/softleader/playbooks#get-the-latest-playbooks)
 
 ## Prepare ansible environment
 
