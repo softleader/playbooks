@@ -56,6 +56,11 @@ make role=${role}
 1. `ll /nfs` - 確認 nfs 已同步所有資料夾, 也許需要等待一小段同步時間
 1. `ssh root@192.168.1.60 -- cat /root/docker-swarm-join-token | bash` - 加入 swarm
 
+### 讓 Swarm master trush 這台新的電腦
+
+1. `ssh root@192.168.1.60`
+1. `ssh-copy-id -i ~/.ssh/id_rsa.pub root@WORKER_NODE_IP`
+
 ## For Developers
 
 以下方式可以簡單的模擬出一個環境去執行所有 playbooks 加以測試:
