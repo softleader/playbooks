@@ -61,6 +61,13 @@ make role=${role}
 1. `ssh root@192.168.1.60`
 1. `ssh-copy-id -i ~/.ssh/id_rsa.pub root@WORKER_NODE_IP`
 
+### 讓 Jenkins trust 這台新的電腦
+
+1. `ssh root@192.168.1.88`
+1. `ssh-copy-id -i ~/.ssh/id_rsa.pub root@WORKER_NODE_IP`
+
+> 8 的 Jenkins 會定期連進來清理 docker
+
 ## For Developers
 
 以下方式可以簡單的模擬出一個環境去執行所有 playbooks 加以測試:
