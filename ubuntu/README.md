@@ -56,17 +56,17 @@ make role=${role}
 1. `ll /nfs` - 確認 nfs 已同步所有資料夾, 也許需要等待一小段同步時間
 1. `ssh root@192.168.1.60 -- cat /root/docker-swarm-join-token | bash` - 加入 swarm
 
-### 讓 Swarm master trush 這台新的電腦
+#### 讓 Swarm master trush 這台新的電腦
 
 1. `ssh root@192.168.1.60`
 1. `ssh-copy-id -i ~/.ssh/id_rsa.pub root@WORKER_NODE_IP`
 
-### 讓 Jenkins trust 這台新的電腦
+#### 讓 Jenkins trust 這台新的電腦
 
 1. `ssh root@192.168.1.88`
 1. `ssh-copy-id -i ~/.ssh/id_rsa.pub root@WORKER_NODE_IP`
 
-> 8 的 Jenkins 會定期連進來清理 docker
+> 88 的 Jenkins 會定期連進來清理 docker
 
 ## For Developers
 
