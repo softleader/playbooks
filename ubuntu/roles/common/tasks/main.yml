@@ -3,7 +3,7 @@
   shell: apt update
 
 - name: Installing common packages
-  shell: apt install -y systemd vim tree curl
+  shell: apt install -y systemd vim tree curl htop
 
 - name: Check if /etc/network/interfaces exist
   shell: ls /etc/network/interfaces 
