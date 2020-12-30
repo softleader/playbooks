@@ -16,6 +16,7 @@ sudo su
 passwd
 
 # 安裝 ansible 及必要 package
+# ubuntu-20以上請刪除 apt-add-repository -y ppa:ansible/ansible && \
 apt-get update && \
 apt-get install -y software-properties-common && \
 apt-add-repository -y ppa:ansible/ansible && \
